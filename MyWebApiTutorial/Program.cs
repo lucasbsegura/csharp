@@ -8,8 +8,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
-        options.UseSqlServer("Server=localhost;Database=MyWebApiTutorialDB;Persist Security Info=True;User ID=SA;Password=*******;TrustServerCertificate=true;"));
-        //Configuration.GetConnectionString("DefaultConnection")
+        options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultDb")));
+        
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
