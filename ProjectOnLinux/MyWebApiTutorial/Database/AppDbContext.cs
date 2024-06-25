@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MyWebApiTutorial.Models;
 
 namespace MyWebApiTutorial
 {

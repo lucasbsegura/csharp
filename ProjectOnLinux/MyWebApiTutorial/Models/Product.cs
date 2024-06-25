@@ -1,4 +1,4 @@
-namespace MyWebApiTutorial
+namespace MyWebApiTutorial.Models
 {
     public class Product
     {

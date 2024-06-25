@@ -1,19 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MyWebApiTutorial.Models;
 
-namespace MyWebApiTutorial
+namespace MyWebApiTutorial.Controllers
 {
 
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController(AppDbContext context) : ControllerBase
     {
-        private readonly AppDbContext _context;
-
-        public ProductsController(AppDbContext context)
-        {
-            _context = context;
-        }
+        private readonly AppDbContext _context = context;
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
